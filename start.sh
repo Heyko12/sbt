@@ -1,3 +1,6 @@
+eval $(minikube -p minikube docker-env)
+docker build -t step-ca .
+
 kubectl delete service step-ca-service
 kubectl delete deployment step-ca
 kubectl delete secrets step-ca-secrets
