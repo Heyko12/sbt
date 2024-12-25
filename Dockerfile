@@ -10,4 +10,4 @@ COPY ${STEP_KMS_PLUGIN_PATH} /usr/local/bin/step-kms-plugin
 
 USER 10001:10001
 
-CMD exec /usr/local/bin/step-ca --password-file /home/step/secrets/password /home/step/config/ca.json
+ENTRYPOINT [ "/usr/local/bin/step-ca", "--password-file", "/home/step/secrets/password", "/home/step/config/ca.json" ]
