@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: step-ca
+  namespace: default
+  labels:
+    app: step-ca
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: step-ca
+  template:
+    metadata:
+      labels:
+        app: step-ca
+    spec:
+      containers:
+        - name: step-ca
+          image: step-ca:latest
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: step-ca-config
+              mountPath: /home/step/config
+              readOnly: true
+            - name: step-ca-db
+              mountPath: /home/step/db
+            - name: step-ca-secrets
+              mountPath: /home/step/secrets
+              readOnly: true
+            - name: step-ca-certs
+              mountPath: /home/step/certs
+              readOnly: true
+          ports:
+            - containerPort: 9000
+              protocol: TCP
+      volumes:
+        - name: step-ca-config
+          configMap:
+            name: step-ca-config
+        - name: step-ca-db
+          persistentVolumeClaim:
+            claimName: step-ca-db
+        - name: step-ca-secrets
+          secret:
+            secretName: step-ca-secrets
+        - name: step-ca-certs
+          secret:
+            secretName: step-ca-certs
