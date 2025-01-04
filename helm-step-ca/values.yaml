@@ -37,12 +37,14 @@ resources: {}
 
 livenessProbe:
   httpGet:
-    path: /
-    port: http
+    path: /health
+    port: 9000
+    scheme: HTTPS
 readinessProbe:
   httpGet:
-    path: /
-    port: http
+    path: /health
+    port: 9000
+    scheme: HTTPS
 
 autoscaling:
   enabled: false
