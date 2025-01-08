@@ -1,0 +1,1 @@
+Сюда притянется актуальная версия репозитория https://github.com/smallstep/step-kms-plugin/tree/main после команд $ git submodule init && git submodule update
