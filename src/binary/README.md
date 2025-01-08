@@ -1,1 +1,0 @@
-Сюда будут положены актуальные бинарники репозиториев certificates и step-kms-plugin после команды "make build"
