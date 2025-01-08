@@ -1,6 +1,3 @@
 [submodule "src/certificates"]
 	path = src/certificates
 	url = git@github.com:smallstep/certificates.git
-[submodule "src/step-kms-plugin"]
-	path = src/step-kms-plugin
-	url = git@github.com:smallstep/step-kms-plugin.git
