@@ -1,1 +1,0 @@
-Сюда притянется актуальная версия репозитория https://github.com/smallstep/certificates/tree/master после команды "git submodule init && git submodule update"
