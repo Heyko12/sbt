@@ -1,3 +1,0 @@
-[submodule "src/certificates"]
-	path = src/certificates
-	url = git@github.com:smallstep/certificates.git
